@@ -10,21 +10,10 @@ namespace EmployeeCRUD_Scafolding.Controllers
     {
         public ActionResult Index()
         {
-            return View();
-        }
+            TutorialsCS _context = new TutorialsCS();
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            var listofData = _context.Employees.ToList();
+            return View(listofData);
         }
     }
 }
